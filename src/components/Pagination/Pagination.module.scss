@@ -1,0 +1,84 @@
+
+
+.page{
+    display: inline-flex;
+    gap: 20px;  
+    position: relative;
+    &__list{
+        &-item{
+            color: black;
+            font-size: 28px;
+            border: 1px solid #fe5f1e;
+            border-radius: 10px;
+            transition: 0.2s ease-in;
+            padding: 10px;
+            cursor: pointer;
+            &:hover{
+                transition: 0.2s ease-out;
+                background: #fe5f1e;
+                color: white;
+            }
+        }
+        &-current{
+            @extend .page__list-item;
+            color: white;
+            background: #fe5f1e;
+            cursor: default;
+        }
+    }
+    &__arrow-prev{
+        &::after{
+            content: "";
+            width: 20px;
+            height: 20px;
+            border: solid #fe5f1e;
+            border-width: 2px 0 0 2px;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            position: absolute;
+            top: 50%;
+            cursor: pointer;
+        }
+        &:hover{
+            &::after{
+            content: "";
+            width: 22px;
+            height: 22px;
+            border: solid black;
+            border-width: 2px 0 0 2px;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            position: absolute;
+            top: 50%;
+            cursor: pointer;
+            transition: 0.2s ease-in;
+            }
+        }
+    }
+    &__arrow-next{
+        &::before{
+            content: "";
+            width: 20px;
+            height: 20px;
+            border: solid #fe5f1e;
+            border-width: 2px 0 0 2px;
+            transform: translate(-50%, -50%) rotate(135deg);
+            position: absolute;
+            top: 50%;
+            cursor: pointer;
+            transition: 0.2s ease-in;
+        }
+        &:hover{
+            &::before{
+            content: "";
+            width: 22px;
+            height: 22px;
+            border: solid black;
+            border-width: 2px 0 0 2px;
+            transform: translate(-50%, -50%) rotate(135deg);
+            position: absolute;
+            top: 50%;
+            cursor: pointer;
+            transition: 0.2s ease-in;
+            }
+        }
+    }
+}
